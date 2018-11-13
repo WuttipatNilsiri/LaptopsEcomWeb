@@ -1,0 +1,19 @@
+extends layout
+block content 
+ .mx-auto.text-center
+  .orderhistory
+    for order in orders
+      ul.list-group
+        a.list-group-item.d-flex.justify-content-between.align-items-center(href='#')
+            #{order.date}
+            span.badge.badge-primary.badge-pill #{order.totalprice}
+  
+
+
+
+    //- for order in orders
+    //-     h1= order.date
+    //-     for item in order.items
+    //-         p= item.laptop.name
+    //-         p= item.quatity
+    //-     p= order.totalprice

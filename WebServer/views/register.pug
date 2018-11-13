@@ -1,0 +1,56 @@
+extends homelayout
+
+block contentinner
+
+ #breadcrumb.section
+  // container
+  .container
+    // row
+    .row
+      .col-md-12
+        h3.breadcrumb-header Sign-Up
+        ul.breadcrumb-tree
+          li
+            a(href='/') Home
+          li.active Sign-Up
+    // /row
+  // /container
+
+
+ .section
+  // container
+  .container
+    // row
+    .row
+      .col-md-2
+      .col-md-8
+        if errors
+            div(class="alert alert-danger") Informations is missing / Password not match 
+        // Billing Details
+        .billing-details.text-center
+          form(action='/users/register' method='post')
+            .form-group
+              input.input(type='text' name='firstname' placeholder='First Name')
+            .form-group
+              input.input(type='text' name='lastname' placeholder='Last Name')
+            .form-group
+              input.input(type='email' name='email' placeholder='Email')
+            .form-group
+              input.input(type='password' name='password' placeholder='Password')
+            .form-group
+              input.input(type='password' name='password2' placeholder='Password Confirm')
+            .form-group
+              input.input(type='text' name='address' placeholder='Address')
+            .form-group
+              input.input(type='text' name='city' placeholder='City')
+            .form-group
+              input.input(type='text' name='country' placeholder='Country')
+            .form-group
+              input.input(type='text' name='zipcode' placeholder='ZIP Code')
+            button.primary-btn.order-submit(href='#') Sign-Up
+        // /Billing Details
+        // Shiping Details
+      .col-md-2
+    // /row
+  // /container
+

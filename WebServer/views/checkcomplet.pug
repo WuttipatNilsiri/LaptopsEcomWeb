@@ -1,0 +1,38 @@
+extends homelayout
+block contentinner
+ #breadcrumb.section
+  // container
+  .container
+    // row
+    .row
+      .col-md-12
+        h3.breadcrumb-header Placed Order
+        ul.breadcrumb-tree
+          li
+            a(href='/') Home
+          li
+            a(href='/cart/show') Cart
+          li.active Placed Order
+    // /row
+  // /container
+
+ .section
+  // container
+  .container
+   .col-md-12
+    // row
+    .row
+        h1= "Order Placed"
+    .row
+        ul.breadcrumb-tree
+          li
+            a(href='/users/member/history') Order History 
+          li
+            a(href='/') Home 
+        
+         
+    // /row
+  // /container
+
+
+

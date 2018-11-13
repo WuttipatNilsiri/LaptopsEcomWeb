@@ -1,0 +1,11 @@
+for card in creditcard
+    p= card
+    form(method='POST', action='/users/member/deletecard/'+card)
+        input.btn.btn-primary(type='submit',value='Delete')
+
+form(method='POST', action='/users/member/addnewcard')
+    label creditcard:
+    input.form-control(name='creditcard',type='text')
+    br
+    input.btn.btn-primary(type='submit',value='Add New Card')
+    

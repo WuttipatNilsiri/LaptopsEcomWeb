@@ -1,0 +1,46 @@
+extends homelayout
+
+block contentinner
+ 
+
+ #breadcrumb.section
+  // container
+  .container
+    // row
+    .row
+      .col-md-12
+        h3.breadcrumb-header Login
+        ul.breadcrumb-tree
+          li
+            a(href='/') Home
+          li.active Login
+    // /row
+  // /container
+
+
+ .section
+  // container
+  .container
+    // row
+    .row
+      .col-md-4
+      .col-md-4
+        != messages('message', locals)
+        if errors
+          each error in errors
+            div(class="alert alert-danger") #{error}
+        // Billing Details
+        .billing-details.text-center
+          form(action='/users/login' method='post')
+            .form-group
+              input.input(type='text' name='username' placeholder='Email')
+            .form-group
+              input.input(type='password' name='password' placeholder='Password')
+            
+            button.primary-btn.order-submit(type='submit') Login
+        // /Billing Details
+        // Shiping Details
+      .col-md-4
+    // /row
+  // /container
+

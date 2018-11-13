@@ -1,0 +1,486 @@
+extends homelayout
+
+block contentinner 
+
+ 
+      
+ 
+ .section
+  // container
+  .container
+    // row
+    .row
+      // shop
+      .col-md-4.col-xs-6
+        .shop
+          .shop-img
+            img(src='./img/shop01.png' alt='')
+          .shop-body
+            h3
+              | Laptop
+              br
+              | Collection
+            a.cta-btn(href='#')
+              | Shop now 
+              i.fa.fa-arrow-circle-right
+      // /shop
+      // shop
+      .col-md-4.col-xs-6
+        .shop
+          .shop-img
+            img(src='./img/shop03.png' alt='')
+          .shop-body
+            h3
+              | Accessories
+              br
+              | Collection
+            a.cta-btn(href='#')
+              | Shop now 
+              i.fa.fa-arrow-circle-right
+      // /shop
+      // shop
+      .col-md-4.col-xs-6
+        .shop
+          .shop-img
+            img(src='./img/shop02.png' alt='')
+          .shop-body
+            h3
+              | Cameras
+              br
+              | Collection
+            a.cta-btn(href='#')
+              | Shop now 
+              i.fa.fa-arrow-circle-right
+      // /shop
+    // /row
+  // /container
+
+ .section
+  // container
+  .container
+    // row
+    .row
+      // section title
+      .col-md-12
+        .section-title
+          h3.title New Products
+      // /section title
+      // Products tab & slick
+      .col-md-12
+        .row
+          .products-tabs
+            // tab
+            #tab1.tab-pane.active
+              .products-slick(data-nav='#slick-nav-1')
+                // product
+                .product
+                  .product-img
+                    img(src='./img/product01.png' alt='')
+                    .product-label
+                      span.sale -30%
+                      span.new NEW
+                  .product-body
+                    p.product-category Category
+                    h3.product-name
+                      a(href='#') product name goes here
+                    h4.product-price
+                      | $980.00 
+                      del.product-old-price $990.00
+                    .product-rating
+                    .product-btns
+                      button.add-to-wishlist
+                        i.fa.fa-heart-o
+                        span.tooltipp add to wishlist
+                      button.add-to-compare
+                        i.fa.fa-exchange
+                        span.tooltipp add to compare
+                      button.quick-view
+                        i.fa.fa-eye
+                        span.tooltipp quick view
+                  .add-to-cart
+                    button.add-to-cart-btn
+                      i.fa.fa-shopping-cart
+                      |  add to cart
+                // /product
+                // product
+                .product
+                  .product-img
+                    img(src='./img/product02.png' alt='')
+                    .product-label
+                      span.new NEW
+                  .product-body
+                    p.product-category Category
+                    h3.product-name
+                      a(href='#') product name goes here
+                    h4.product-price
+                      | $980.00 
+                      del.product-old-price $990.00
+                    .product-rating
+                      i.fa.fa-star
+                      i.fa.fa-star
+                      i.fa.fa-star
+                      i.fa.fa-star
+                      i.fa.fa-star-o
+                    .product-btns
+                      button.add-to-wishlist
+                        i.fa.fa-heart-o
+                        span.tooltipp add to wishlist
+                      button.add-to-compare
+                        i.fa.fa-exchange
+                        span.tooltipp add to compare
+                      button.quick-view
+                        i.fa.fa-eye
+                        span.tooltipp quick view
+                  .add-to-cart
+                    button.add-to-cart-btn
+                      i.fa.fa-shopping-cart
+                      |  add to cart
+                // /product
+                // product
+                .product
+                  .product-img
+                    img(src='./img/product03.png' alt='')
+                    .product-label
+                      span.sale -30%
+                  .product-body
+                    p.product-category Category
+                    h3.product-name
+                      a(href='#') product name goes here
+                    h4.product-price
+                      | $980.00 
+                      del.product-old-price $990.00
+                    .product-rating
+                    .product-btns
+                      button.add-to-wishlist
+                        i.fa.fa-heart-o
+                        span.tooltipp add to wishlist
+                      button.add-to-compare
+                        i.fa.fa-exchange
+                        span.tooltipp add to compare
+                      button.quick-view
+                        i.fa.fa-eye
+                        span.tooltipp quick view
+                  .add-to-cart
+                    button.add-to-cart-btn
+                      i.fa.fa-shopping-cart
+                      |  add to cart
+                // /product
+                // product
+                .product
+                  .product-img
+                    img(src='./img/product04.png' alt='')
+                  .product-body
+                    p.product-category Category
+                    h3.product-name
+                      a(href='#') product name goes here
+                    h4.product-price
+                      | $980.00 
+                      del.product-old-price $990.00
+                    .product-rating
+                      i.fa.fa-star
+                      i.fa.fa-star
+                      i.fa.fa-star
+                      i.fa.fa-star
+                      i.fa.fa-star
+                    .product-btns
+                      button.add-to-wishlist
+                        i.fa.fa-heart-o
+                        span.tooltipp add to wishlist
+                      button.add-to-compare
+                        i.fa.fa-exchange
+                        span.tooltipp add to compare
+                      button.quick-view
+                        i.fa.fa-eye
+                        span.tooltipp quick view
+                  .add-to-cart
+                    button.add-to-cart-btn
+                      i.fa.fa-shopping-cart
+                      |  add to cart
+                // /product
+                // product
+                .product
+                  .product-img
+                    img(src='./img/product05.png' alt='')
+                  .product-body
+                    p.product-category Category
+                    h3.product-name
+                      a(href='#') product name goes here
+                    h4.product-price
+                      | $980.00 
+                      del.product-old-price $990.00
+                    .product-rating
+                      i.fa.fa-star
+                      i.fa.fa-star
+                      i.fa.fa-star
+                      i.fa.fa-star
+                      i.fa.fa-star
+                    .product-btns
+                      button.add-to-wishlist
+                        i.fa.fa-heart-o
+                        span.tooltipp add to wishlist
+                      button.add-to-compare
+                        i.fa.fa-exchange
+                        span.tooltipp add to compare
+                      button.quick-view
+                        i.fa.fa-eye
+                        span.tooltipp quick view
+                  .add-to-cart
+                    button.add-to-cart-btn
+                      i.fa.fa-shopping-cart
+                      |  add to cart
+                // /product
+              #slick-nav-1.products-slick-nav
+            // /tab
+      // Products tab & slick
+    // /row
+  // /container
+
+ .section
+  // container
+  .container
+    // row
+    .row
+      .col-md-4.col-xs-6
+        .section-title
+          h4.title Top selling
+          .section-nav
+            #slick-nav-3.products-slick-nav
+        .products-widget-slick(data-nav='#slick-nav-3')
+          div
+            // product widget
+            .product-widget
+              .product-img
+                img(src='./img/product07.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+            // /product widget
+            // product widget
+            .product-widget
+              .product-img
+                img(src='./img/product08.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+            // /product widget
+            // product widget
+            .product-widget
+              .product-img
+                img(src='./img/product09.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+            // product widget
+          div
+            // product widget
+            .product-widget
+              .product-img
+                img(src='./img/product01.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+            // /product widget
+            // product widget
+            .product-widget
+              .product-img
+                img(src='./img/product02.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+            // /product widget
+            // product widget
+            .product-widget
+              .product-img
+                img(src='./img/product03.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+            // product widget
+      .col-md-4.col-xs-6
+        .section-title
+          h4.title Top selling
+          .section-nav
+            #slick-nav-4.products-slick-nav
+        .products-widget-slick(data-nav='#slick-nav-4')
+          div
+            // product widget
+            .product-widget
+              .product-img
+                img(src='./img/product04.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+            // /product widget
+            // product widget
+            .product-widget
+              .product-img
+                img(src='./img/product05.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+            // /product widget
+            // product widget
+            .product-widget
+              .product-img
+                img(src='./img/product06.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+            // product widget
+          div
+            // product widget
+            .product-widget
+              .product-img
+                img(src='./img/product07.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+            // /product widget
+            // product widget
+            .product-widget
+              .product-img
+                img(src='./img/product08.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+            // /product widget
+            // product widget
+            .product-widget
+              .product-img
+                img(src='./img/product09.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+            // product widget
+      .clearfix.visible-sm.visible-xs
+      .col-md-4.col-xs-6
+        .section-title
+          h4.title Top selling
+          .section-nav
+            #slick-nav-5.products-slick-nav
+        .products-widget-slick(data-nav='#slick-nav-5')
+          div
+            // product widget
+            .product-widget
+              .product-img
+                img(src='./img/product01.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+            // /product widget
+            // product widget
+            .product-widget
+              .product-img
+                img(src='./img/product02.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+            // /product widget
+            // product widget
+            .product-widget
+              .product-img
+                img(src='./img/product03.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+            // product widget
+          div
+            // product widget
+            .product-widget
+              .product-img
+                img(src='./img/product04.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+            // /product widget
+            // product widget
+            .product-widget
+              .product-img
+                img(src='./img/product05.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+            // /product widget
+            // product widget
+            .product-widget
+              .product-img
+                img(src='./img/product06.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+            // product widget
+    // /row
+  // /container
+

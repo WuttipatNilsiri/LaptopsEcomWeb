@@ -1,0 +1,82 @@
+extends homelayout
+block contentinner
+
+ #breadcrumb.section
+  // container
+  .container
+    // row
+    .row
+      .col-md-12
+        h3.breadcrumb-header Checkout
+        ul.breadcrumb-tree
+          li
+            a(href='/') Home
+          li
+            a(href='/cart/show') Cart
+          li.active Checkout
+    // /row
+  // /container
+
+ .section
+  // container
+  .container
+    // row
+    .row
+      .col-md-2
+      .col-md-8
+       .row
+        if cart.length > 0
+          table.table
+              tbody
+                for item in cart
+                 tr
+                  td
+                   .product-widget
+                    .product-img
+                      img(src='/img/'+item.laptop.img alt='')
+                    .product-body
+                      h3.product-name
+                        a(href='#') #{item.laptop.name}
+                      h4.product-price
+                        | #{item.laptop.price}
+                  td.col-md-2
+                    h5 #{item.quatity}
+       .row
+        
+        
+        .cart-summary.col-md-3.pull-right
+            small #{count} Item(s) selected
+            h5 SUBTOTAL: #{totalprice.toFixed(2)}
+       
+       .row
+
+        
+        form(method='POST', action='/checkout/comfirm')
+         .row
+            .col-md-5
+                h3 Credit card
+         .row
+            .col-md-5
+                select#cardnumber.select.form-control.input-lg(name='cardnumber')
+                    each card in cards
+                        option(value=card) #{card}
+            .col-md-3.pull-right
+                button.primary-btn.order-submit(type='summit') countinue
+
+
+
+
+
+//-  for item in cart
+//-     p= item.laptop.name
+//-     p= item.quatity
+//-  p= totalprice
+
+
+
+//-  form(method='POST', action='/checkout/placeorder')
+//-     select#cardnumber.select.form-control.input-lg(name='cardnumber')
+//-         each card in cards
+//-             option(value=card) #{card}
+    
+//-     input.btn.btn-primary(type='submit',value='placeorder')

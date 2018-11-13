@@ -1,0 +1,445 @@
+extends storelayout
+
+block contentinner
+
+
+ #breadcrumb.section
+  // container
+  .container
+    // row
+    .row
+      .col-md-12
+        h3.breadcrumb-header Store
+        ul.breadcrumb-tree
+          li
+            a(href='/') Home
+          li.active Laptops
+    // /row
+  // /container
+
+ .section
+  // container
+  .container
+    // row
+    .row
+      // ASIDE
+      #aside.col-md-3
+        // aside Widget
+        .aside
+          h3.aside-title Categories
+          .checkbox-filter
+            .input-checkbox
+              input#category-1(type='checkbox')
+              label(for='category-1')
+                span
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Gaming
+                //- small (120)
+            .input-checkbox
+              input#category-2(type='checkbox')
+              label(for='category-2')
+                span
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Working
+                //- small (740)
+            
+            
+        // /aside Widget
+        // aside Widget
+        //- .aside
+        //-   h3.aside-title Price
+        //-   .price-filter
+        //-     #price-slider
+        //-     .input-number.price-min
+        //-       input#price-min(type='number')
+        //-       span.qty-up +
+        //-       span.qty-down -
+        //-     span -
+        //-     .input-number.price-max
+        //-       input#price-max(type='number')
+        //-       span.qty-up +
+        //-       span.qty-down -
+        // /aside Widget
+        // aside Widget
+        .aside
+          h3.aside-title Brand
+          .checkbox-filter
+            .input-checkbox
+              input#brand-1(type='checkbox')
+              label(for='brand-1')
+                span
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;SAMSUNG
+                //- small (578)
+            .input-checkbox
+              input#brand-2(type='checkbox')
+              label(for='brand-2')
+                span
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;LG
+                //- small (125)
+            .input-checkbox
+              input#brand-3(type='checkbox')
+              label(for='brand-3')
+                span
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;SONY
+                //- small (755)
+            .input-checkbox
+              input#brand-4(type='checkbox')
+              label(for='brand-4')
+                span
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;SAMSUNG
+                //- small (578)
+            .input-checkbox
+              input#brand-5(type='checkbox')
+              label(for='brand-5')
+                span
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;LG
+                //- small (125)
+            .input-checkbox
+              input#brand-6(type='checkbox')
+              label(for='brand-6')
+                span
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;SONY
+                //- small (755)
+        br
+        button.primary-btn.order-submit(type='submit') Filter
+        // /aside Widget
+        // aside Widget
+        //- .aside
+        //-   h3.aside-title Top selling
+        //-   .product-widget
+        //-     .product-img
+        //-       img(src='./img/product01.png' alt='')
+        //-     .product-body
+        //-       p.product-category Category
+        //-       h3.product-name
+        //-         a(href='#') product name goes here
+        //-       h4.product-price
+        //-         | $980.00 
+        //-         del.product-old-price $990.00
+        //-   .product-widget
+        //-     .product-img
+        //-       img(src='./img/product02.png' alt='')
+        //-     .product-body
+        //-       p.product-category Category
+        //-       h3.product-name
+        //-         a(href='#') product name goes here
+        //-       h4.product-price
+        //-         | $980.00 
+        //-         del.product-old-price $990.00
+        //-   .product-widget
+        //-     .product-img
+        //-       img(src='./img/product03.png' alt='')
+        //-     .product-body
+        //-       p.product-category Category
+        //-       h3.product-name
+        //-         a(href='#') product name goes here
+        //-       h4.product-price
+        //-         | $980.00 
+        //-         del.product-old-price $990.00
+        // /aside Widget
+      // /ASIDE
+      // STORE
+      #store.col-md-9
+        // store top filter
+        //- .store-filter.clearfix
+        //-   .store-sort
+        //-     label
+        //-       | Sort By:
+        //-       select.input-select
+        //-         option(value='0') Popular
+        //-         option(value='1') Position
+        //-     label
+        //-       | Show:
+        //-       select.input-select
+        //-         option(value='0') 20
+        //-         option(value='1') 50
+        //-   ul.store-grid
+        //-     li.active
+        //-       i.fa.fa-th
+        //-     li
+        //-       a(href='#')
+        //-         i.fa.fa-th-list
+        //- // /store top filter
+        // store products
+        .row
+          // product
+          .col-md-4.col-xs-6
+            .product
+              .product-img
+                img(src='./img/nullimg.jpg' alt='')
+              .product-body
+                p.product-category Gaming
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+              .add-to-cart
+                button.add-to-cart-btn
+                  i.fa.fa-shopping-cart
+                  |  add to cart
+          // /product
+          // product
+          .col-md-4.col-xs-6
+            .product
+              .product-img
+                img(src='./img/product02.png' alt='')
+                .product-label
+                  span.new NEW
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+                .product-rating
+                  i.fa.fa-star
+                  i.fa.fa-star
+                  i.fa.fa-star
+                  i.fa.fa-star
+                  i.fa.fa-star-o
+                .product-btns
+                  button.add-to-wishlist
+                    i.fa.fa-heart-o
+                    span.tooltipp add to wishlist
+                  button.add-to-compare
+                    i.fa.fa-exchange
+                    span.tooltipp add to compare
+                  button.quick-view
+                    i.fa.fa-eye
+                    span.tooltipp quick view
+              .add-to-cart
+                button.add-to-cart-btn
+                  i.fa.fa-shopping-cart
+                  |  add to cart
+          // /product
+          //- .clearfix.visible-sm.visible-xs
+          // product
+          .col-md-4.col-xs-6
+            .product
+              .product-img
+                img(src='./img/product03.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+                .product-rating
+                .product-btns
+                  button.add-to-wishlist
+                    i.fa.fa-heart-o
+                    span.tooltipp add to wishlist
+                  button.add-to-compare
+                    i.fa.fa-exchange
+                    span.tooltipp add to compare
+                  button.quick-view
+                    i.fa.fa-eye
+                    span.tooltipp quick view
+              .add-to-cart
+                button.add-to-cart-btn
+                  i.fa.fa-shopping-cart
+                  |  add to cart
+          // /product
+          //- .clearfix.visible-lg.visible-md
+          // product
+          .col-md-4.col-xs-6
+            .product
+              .product-img
+                img(src='./img/product04.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+                .product-rating
+                .product-btns
+                  button.add-to-wishlist
+                    i.fa.fa-heart-o
+                    span.tooltipp add to wishlist
+                  button.add-to-compare
+                    i.fa.fa-exchange
+                    span.tooltipp add to compare
+                  button.quick-view
+                    i.fa.fa-eye
+                    span.tooltipp quick view
+              .add-to-cart
+                button.add-to-cart-btn
+                  i.fa.fa-shopping-cart
+                  |  add to cart
+          // /product
+          //- .clearfix.visible-sm.visible-xs
+          // product
+          .col-md-4.col-xs-6
+            .product
+              .product-img
+                img(src='./img/product05.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+                .product-rating
+                .product-btns
+                  button.add-to-wishlist
+                    i.fa.fa-heart-o
+                    span.tooltipp add to wishlist
+                  button.add-to-compare
+                    i.fa.fa-exchange
+                    span.tooltipp add to compare
+                  button.quick-view
+                    i.fa.fa-eye
+                    span.tooltipp quick view
+              .add-to-cart
+                button.add-to-cart-btn
+                  i.fa.fa-shopping-cart
+                  |  add to cart
+          // /product
+          // product
+          .col-md-4.col-xs-6
+            .product
+              .product-img
+                img(src='./img/product06.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+                .product-rating
+                  i.fa.fa-star
+                  i.fa.fa-star
+                  i.fa.fa-star
+                  i.fa.fa-star
+                  i.fa.fa-star-o
+                .product-btns
+                  button.add-to-wishlist
+                    i.fa.fa-heart-o
+                    span.tooltipp add to wishlist
+                  button.add-to-compare
+                    i.fa.fa-exchange
+                    span.tooltipp add to compare
+                  button.quick-view
+                    i.fa.fa-eye
+                    span.tooltipp quick view
+              .add-to-cart
+                button.add-to-cart-btn
+                  i.fa.fa-shopping-cart
+                  |  add to cart
+          // /product
+          //- .clearfix.visible-lg.visible-md.visible-sm.visible-xs
+          // product
+          .col-md-4.col-xs-6
+            .product
+              .product-img
+                img(src='./img/product07.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+                .product-rating
+                  i.fa.fa-star
+                  i.fa.fa-star
+                  i.fa.fa-star
+                  i.fa.fa-star
+                  i.fa.fa-star
+                .product-btns
+                  button.add-to-wishlist
+                    i.fa.fa-heart-o
+                    span.tooltipp add to wishlist
+                  button.add-to-compare
+                    i.fa.fa-exchange
+                    span.tooltipp add to compare
+                  button.quick-view
+                    i.fa.fa-eye
+                    span.tooltipp quick view
+              .add-to-cart
+                button.add-to-cart-btn
+                  i.fa.fa-shopping-cart
+                  |  add to cart
+          // /product
+          // product
+          .col-md-4.col-xs-6
+            .product
+              .product-img
+                img(src='./img/product08.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+                .product-rating
+                .product-btns
+                  button.add-to-wishlist
+                    i.fa.fa-heart-o
+                    span.tooltipp add to wishlist
+                  button.add-to-compare
+                    i.fa.fa-exchange
+                    span.tooltipp add to compare
+                  button.quick-view
+                    i.fa.fa-eye
+                    span.tooltipp quick view
+              .add-to-cart
+                button.add-to-cart-btn
+                  i.fa.fa-shopping-cart
+                  |  add to cart
+          // /product
+          //- .clearfix.visible-sm.visible-xs
+          // product
+          .col-md-4.col-xs-6
+            .product
+              .product-img
+                img(src='./img/product09.png' alt='')
+              .product-body
+                p.product-category Category
+                h3.product-name
+                  a(href='#') product name goes here
+                h4.product-price
+                  | $980.00 
+                  del.product-old-price $990.00
+                .product-rating
+                .product-btns
+                  button.add-to-wishlist
+                    i.fa.fa-heart-o
+                    span.tooltipp add to wishlist
+                  button.add-to-compare
+                    i.fa.fa-exchange
+                    span.tooltipp add to compare
+                  button.quick-view
+                    i.fa.fa-eye
+                    span.tooltipp quick view
+              .add-to-cart
+                button.add-to-cart-btn
+                  i.fa.fa-shopping-cart
+                  |  add to cart
+          // /product
+        // /store products
+        // store bottom filter
+        .store-filter.clearfix
+          //- span.store-qty Showing 20-100 products
+          ul.store-pagination
+            li.active 1
+            li
+              a(href='#') 2
+            li
+              a(href='#') 3
+            li
+              a(href='#') 4
+            li
+              a(href='#')
+                i.fa.fa-angle-right
+        // /store bottom filter
+      // /STORE
+    // /row
+  // /container
+

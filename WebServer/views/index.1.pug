@@ -1,0 +1,23 @@
+
+block content
+  h1 #{title}
+
+  
+  if user
+    a(href="/users/member")= user.name
+    br
+    a(href="/users/logout")= "logout"
+    br
+    a(href="/cart/show")= "cart"
+  
+  else
+    a(href="/users/register")= "register"
+    br
+    a(href="/users/login")= "login"
+  
+
+  ul.list-group
+    each laptop, i in laptops
+      li.list-group-item
+        a(href="/laptops/"+laptop._id)= laptop.name
+    

@@ -1,0 +1,127 @@
+extends storelayout
+
+block contentinner
+ #breadcrumb.section
+  // container
+  .container
+    // row
+    .row
+      .col-md-12
+        h3.breadcrumb-header Store
+        ul.breadcrumb-tree
+          li
+            a(href='/') Home
+          li
+            a(href='/store') Laptop
+          li.active #{laptop.name}
+    // /row
+  // /container
+
+ .section
+  // container
+  .container
+    // row
+    .row
+      // Product main img
+      .col-md-6
+        #product-main-img
+          .product-preview
+            img(src='/img/'+laptop.img alt='')
+      // /Product main img
+      // Product thumb imgs
+      // /Product thumb imgs
+      // Product details
+      .col-md-6
+        .product-details
+          h2.product-name #{laptop.name}
+          div
+            h3.product-price #{'$'+laptop.price}
+            span.product-available In Stock
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          form(method='POST', action='/laptops/addtocart/'+laptop._id)
+           .add-to-cart
+            .qty-label
+              | Qty 
+              .input-number
+                input(name='quatity' type='number' value=1)
+                span.qty-up +
+                span.qty-down -
+            button.add-to-cart-btn(type='submit')
+              i.fa.fa-shopping-cart
+              |  add to cart
+          ul.product-links
+            li Category:
+            li
+              a(href='#') Gaming
+            li Brand:
+            li
+              a(href='#') #{laptop.brand}
+      // /Product details
+      // Product tab
+      .col-md-12
+        #product-tab
+          // product tab nav
+          ul.tab-nav
+            li.active
+              a(data-toggle='tab' href='#tab1') Description
+            li
+              a(data-toggle='tab' href='#tab2') Spec
+          // /product tab nav
+          // product tab content
+          .tab-content
+            // tab1
+            #tab1.tab-pane.fade.in.active
+              .row
+                .col-md-12
+                  p
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            // /tab1
+            // tab2
+            #tab2.tab-pane.fade.in
+              .row
+                .col-md-2
+                .col-md-8
+                  table.table
+                    thead
+                      tr
+                        th(scope='col') 
+                        th(scope='col') Spec
+      
+                    tbody
+                      for s , key in laptop.spec
+                        tr
+                          th(scope='row') #{key}
+                          td #{s}
+                .col-md-2
+      
+            // /tab2
+          // /product tab content
+      // /product tab
+    // /row
+  // /container
+
+
+//- block content
+//-   h1= laptop.name
+//-   p= laptop.brand
+
+//-   for x , key in laptop.spec
+//-     p= key+ ": " + x 
+//-   //- p= laptop.spec.CPU
+//-   //- p= laptop.spec.GPU
+//-   p= laptop.price
+
+//-   form(method='POST', action='/laptops/addtocart/'+laptop._id)
+//-     #form-group
+//-       label Quatity:
+//-       input.form-control(name='quatity', type='Number' value=1)
+//-     br
+//-     input.btn.btn-primary(type='submit',value='Add to Cart')
+  
+ 
+    
+  
+    
+    
+  

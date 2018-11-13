@@ -1,0 +1,159 @@
+extends homelayout
+block contentinner
+ #breadcrumb.section
+  // container
+  .container
+    // row
+    .row
+      .col-md-12
+        h3.breadcrumb-header Cart
+        ul.breadcrumb-tree
+          li
+            a(href='/') Home
+          li.active Cart
+    // /row
+  // /container
+
+ .section
+  // container
+  .container
+    // row
+    .row
+     form(method='POST', action='./save')
+      .col-md-7
+        if cart.length > 0
+          table.table
+              tbody
+                for item in cart
+                 tr
+                  td
+                   .product-widget
+                    .product-img
+                      img(src='/img/'+item.laptop.img alt='')
+                    .product-body
+                      h3.product-name
+                        a(href='#') #{item.laptop.name}
+                      h4.product-price
+                        | #{item.laptop.price}
+                    a.delete(href='./delete/'+item.laptop._id)
+                        i.fa.fa-close
+                  td.col-md-2
+                    .input-number
+                        input(name='quatity-'+item.laptop._id type='number' value=item.quatity)
+                        span.qty-up +
+                        span.qty-down -
+        else
+          h1= "Cart Empty"
+        .row
+          .cart-summary.col-md-10
+            small #{count} Item(s) selected
+            h5 SUBTOTAL: #{totalprice.toFixed(2)}
+          if cart.length > 0  
+            button.primary-btn.order-submit(type='submit') Save
+        br
+                  
+        //- .product-widget
+        //-             .product-img
+        //-               img(src='/img/product01.png' alt='')
+        //-             .product-body
+        //-               h3.product-name
+        //-                 a(href='#') product name goes here
+        //-               h4.product-price
+        //-                 span.qty 1x
+        //-                 | $980.00
+        //-             button.delete
+        //-               i.fa.fa-close
+        //- .product-widget
+        //-             .product-img
+        //-               img(src='/img/product02.png' alt='')
+        //-             .product-body
+        //-               h3.product-name
+        //-                 a(href='#') product name goes here
+        //-               h4.product-price
+        //-                 span.qty 3x
+        //-                 | $980.00
+        //-             button.delete
+        //-               i.fa.fa-close
+                    
+        //- .cart-summary
+        //-           small 3 Item(s) selected
+        //-           h5 SUBTOTAL: $2940.00
+                
+
+
+        // Billing Details
+        //- table.table
+        
+                    
+                    tbody
+                      for item in cart
+                        tr
+                          th(scope='row') #{item.laptop.name}
+                          td #{item.laptop.price}
+                          td.col-md-2
+                            .input-number
+                                input(name='quatity' type='number' value=item.quatity)
+                                span.qty-up +
+                                span.qty-down -
+                          
+
+                    
+        
+        // /Billing Details
+        // Order notes
+        
+      // Order Details
+      .col-md-5.order-details
+        .section-title.text-center
+          h3.title Your Order
+        .order-summary
+          .order-col
+            div
+              strong PRODUCT
+            div
+              strong TOTAL
+          .order-products
+           for item in cart
+            .order-col
+              div #{item.quatity+"x "+item.laptop.name}
+              div #{(item.laptop.price*item.quatity).toFixed(2)}
+            //- .order-col
+            //-   div 2x Product Name Goes Here
+            //-   div $980.00
+          .order-col
+            div Shiping
+            div
+              strong FREE
+          .order-col
+            div
+              strong TOTAL
+            div
+              strong.order-total #{totalprice.toFixed(2)}
+              
+        if cart.length > 0
+            a.primary-btn.order-submit(href='/checkout') Check Out
+        else
+            a.primary-btn.order-submit.isDisabled(href='/checkout') Check Out
+        
+      // /Order Details
+    // /row
+  // /container
+
+
+//- for item in cart
+//-     a(href="/laptops/"+item.laptop._id)= item.laptop.name
+//-     p= item.quatity
+//-     p= item.laptop.price
+//-     form(method='POST', action='./delete/'+item.laptop._id)
+//-         input.btn.btn-primary(type='submit',value='Delete')
+//- if(cart.length != 0)
+//-     p= totalprice
+//-     form(method='GET', action='/checkout')
+//-         input.btn.btn-primary(type='submit',value='Checkout')
+//- else
+//-     h1= "Cart Empty"
+
+
+    
+    
+ 
