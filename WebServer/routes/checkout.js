@@ -80,7 +80,8 @@ router.post('/placeorder',function(req,res){
             date:date,
             items:user.cart,
             totalprice:sum,
-            paymentcard:card
+            paymentcard:card,
+            address:res.locals.user.address
         })
 
         newOrder.save(function(err){

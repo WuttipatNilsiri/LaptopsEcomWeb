@@ -1,0 +1,74 @@
+extends homelayout
+
+block contentinner
+
+
+ #breadcrumb.section
+  // container
+  .container
+    // row
+    .row
+      .col-md-12
+        h3.breadcrumb-header Member
+        ul.breadcrumb-tree
+          li
+            a(href='/') Home
+          li.active Member
+    // /row
+  // /container
+
+ .section
+  // container
+  .container
+    // row
+    .row
+      // ASIDE
+      #aside.col-md-3
+       
+        // aside Widget
+        .aside
+          h3.aside-title Options
+          ul
+           li
+            a(href='/users/member/history')= "> Orderhistory"
+           li
+            a(href='/users/member/wallet')= "> Payment"
+          
+        //-   .checkbox-filter
+        //-     .input-checkbox
+        //-       input#category-1(type='checkbox')
+        //-       label(for='category-1')
+        //-         span
+        //-         | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Gaming
+                //- small (120)
+            .input-checkbox
+              input#category-2(type='checkbox')
+              label(for='category-2')
+                span
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Working
+                //- small (740)
+            
+            
+        // /aside Widget
+        // aside Widget
+        //- .aside
+        //-   h3.aside-title Price
+        //-   .price-filter
+        //-     #price-slider
+        //-     .input-number.price-min
+        //-       input#price-min(type='number')
+        //-       span.qty-up +
+        //-       span.qty-down -
+        //-     span -
+        //-     .input-number.price-max
+        //-       input#price-max(type='number')
+        //-       span.qty-up +
+        //-       span.qty-down -
+        // /aside Widget
+        // aside Widget
+    
+        
+        
+      #store.col-md-9
+        block memberinner
+        

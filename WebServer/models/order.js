@@ -23,6 +23,10 @@ let orderSchema = mongoose.Schema({
   paymentcard:{
       type:String,
       required: true
+  },
+  address:{
+    type:JSON,
+    required: true
   }
 });
 

@@ -1,0 +1,31 @@
+extends memberlayout
+block memberinner
+       .row
+        
+          table.table
+              tbody
+                for item in order.items
+                 tr
+                  td
+                   .product-widget
+                    .product-img
+                      img(src='/img/'+item.laptop.img alt='')
+                    .product-body
+                      h3.product-name
+                        a(href='#') #{item.laptop.name}
+                      h4.product-price
+                        | #{item.laptop.price}
+                  td.col-md-2
+                    h5 #{item.quatity}
+       .row
+          table.table
+                    
+      
+                    tbody
+                      tr 
+                          th orderdate
+                          td #{order.date}
+                      for s , key in order.address
+                        tr
+                          th(scope='row') #{key}
+                          td #{s}

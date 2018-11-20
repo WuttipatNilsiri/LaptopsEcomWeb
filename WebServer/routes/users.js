@@ -210,4 +210,18 @@ router.post('/member/addnewcard', function(req,res){
   })
 })
 
+router.get('/member/orderinfo/:id',function(req,res){
+  orderid = req.params.id
+  Order.findById(orderid,function(err,order){
+    if(err){
+      console.log(err)
+    }
+    else
+      res.render('orderinfo',{
+        order:order
+      })
+
+  })
+})
+
 module.exports = router;

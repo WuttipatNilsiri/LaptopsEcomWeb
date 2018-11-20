@@ -1,9 +1,28 @@
-for card in creditcard
-    p= card
-    form(method='POST', action='/users/member/deletecard/'+card)
-        input.btn.btn-primary(type='submit',value='Delete')
+extends memberlayout
+block memberinner
+ ul.list-group
+ 
+  
 
-form(method='POST', action='/users/member/addnewcard')
+ table.table
+            tbody
+              
+                for card in creditcard
+                 tr
+                  th
+                    h3.product-name #{card}
+                  
+                  td
+                   form(method='POST', action='/users/member/deletecard/'+card).pull-right
+                        input.btn.btn-primary.col-3(type='submit',value='Delete')
+
+    
+        
+        
+
+    
+
+ form(method='POST', action='/users/member/addnewcard')
     label creditcard:
     input.form-control(name='creditcard',type='text')
     br

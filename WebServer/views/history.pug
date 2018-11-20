@@ -1,12 +1,12 @@
-extends layout
-block content 
+extends memberlayout
+block memberinner 
  .mx-auto.text-center
   .orderhistory
     for order in orders
       ul.list-group
-        a.list-group-item.d-flex.justify-content-between.align-items-center(href='#')
+        a.list-group-item.d-flex.justify-content-between.align-items-center(href='/users/member/orderinfo/'+order._id)
             #{order.date}
-            span.badge.badge-primary.badge-pill #{order.totalprice}
+            span.badge.badge-primary.badge-pill #{order.totalprice +" $"}
   
 
 

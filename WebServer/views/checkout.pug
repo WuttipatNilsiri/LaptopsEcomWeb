@@ -49,19 +49,21 @@ block contentinner
             h5 SUBTOTAL: #{totalprice.toFixed(2)}
        
        .row
-
-        
-        form(method='POST', action='/checkout/comfirm')
-         .row
+        if cards.length > 0
+       
+         form(method='POST', action='/checkout/comfirm')
+          .row
             .col-md-5
                 h3 Credit card
-         .row
+          .row
             .col-md-5
                 select#cardnumber.select.form-control.input-lg(name='cardnumber')
                     each card in cards
                         option(value=card) #{card}
             .col-md-3.pull-right
                 button.primary-btn.order-submit(type='summit') countinue
+        else
+          a.primary-btn(href='/users/member/wallet') add credit     
 
 
 
