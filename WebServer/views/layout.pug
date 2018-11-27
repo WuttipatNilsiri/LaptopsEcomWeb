@@ -39,6 +39,13 @@ header
          a(href='/users/logout')
             i.fa.fa-user-o
             |  Logout
+        if user.admin
+          li
+            a(href='/upload')
+              i.fa.fa-user-o
+              |  add product
+          li
+
        else
         li
           a(href='/users/login')
@@ -131,12 +138,7 @@ footer#footer
                 a(href='#') Hot deals
               li
                 a(href='#') Laptops
-              li
-                a(href='#') Smartphones
-              li
-                a(href='#') Cameras
-              li
-                a(href='#') Accessories
+              
         .clearfix.visible-xs
         .col-md-3.col-xs-6
           .footer
@@ -157,15 +159,10 @@ footer#footer
             h3.footer-title Service
             ul.footer-links
               li
-                a(href='#') My Account
+                a(href='/users/member') My Account
               li
-                a(href='#') View Cart
-              li
-                a(href='#') Wishlist
-              li
-                a(href='#') Track My Order
-              li
-                a(href='#') Help
+                a(href='/cart/show') View Cart
+              
       // /row
     // /container
   // /top footer

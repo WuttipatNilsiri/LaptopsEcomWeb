@@ -12,6 +12,7 @@ let Laptop = require('./models/laptop');
 
 
 
+
 mongoose.connect(config.database);
 let db = mongoose.connection;
 
@@ -430,15 +431,19 @@ app.get('/search', function(req,res){
   })
 })
 
+
 // Route Files
 let laptop = require('./routes/info');
 let users = require('./routes/users');
 let cart = require('./routes/cart');
 let checkout = require('./routes/checkout');
+let upload = require('./routes/upload');
 app.use('/laptops', laptop);
 app.use('/users', users);
 app.use('/cart', cart);
 app.use('/checkout', checkout);
+app.use('/upload', upload)
+
 
 
 // Start Server

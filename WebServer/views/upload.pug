@@ -1,0 +1,21 @@
+extends homelayout
+
+block contentinner 
+
+ .section
+  
+  .container
+    form(action='/upload/addlaptop' method='POST' enctype='multipart/form-data')
+            .form-group
+              input.input(type='text' name='name' placeholder='Name')
+            .form-group
+              input.input(type='text' name='brand' placeholder='Brand')
+            .form-group
+              input.input(type='number' name='price' placeholder='Price')
+            .form-group
+              textarea.input(type='text' name='spec' placeholder='SPEC **JSON** FORMAT' rows="3")
+            .form-group
+              label IMG
+              input(type='file' name='myimage')
+            .form-group
+              button.primary-btn.order-submit(type='submit') SUMMIT

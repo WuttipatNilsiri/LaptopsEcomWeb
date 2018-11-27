@@ -26,6 +26,11 @@ router.post('/register', function(req, res){
                    country:req.body.country,
                    zipcode:req.body.zipcode};
   const creditcard = {};
+  
+  const admintest = req.body.admin
+  admin = null
+  
+  
 
   req.checkBody('firstname', 'F_Name is required').notEmpty();
   req.checkBody('lastname', 'L_Name is required').notEmpty();
@@ -41,8 +46,17 @@ router.post('/register', function(req, res){
   if(req.body.creditcard != ''){
     creditcard[req.body.creditcard] = req.body.creditcard
   }
-  
-
+  if (admintest){
+    if (admintest == 'rinneprpr'){
+      admin = true
+    }
+    else{
+      res.render('register', {
+        errors:'rinneerror'
+      });
+      return;
+    }
+  }
   let errors = req.validationErrors();
 
   if(errors){
@@ -59,7 +73,8 @@ router.post('/register', function(req, res){
       password:password,
       address:address,
       creditcard:creditcard,
-      cart:{}
+      cart:{},
+      admin:admin
     });
 
     bcrypt.genSalt(10, function(err, salt){

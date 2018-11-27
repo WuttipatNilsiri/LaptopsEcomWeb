@@ -24,10 +24,13 @@ block contentinner
     .row
       .col-md-2
       .col-md-8
-        if errors
+        
+        if errors = 'rinneerror'
+            div(class="alert alert-danger") rinneerror
+        else if errors
             div(class="alert alert-danger") Informations is missing / Password not match 
         // Billing Details
-        .billing-details.text-center
+        .billing-details
           form(action='/users/register' method='post')
             .form-group
               input.input(type='text' name='firstname' placeholder='First Name')
@@ -47,7 +50,18 @@ block contentinner
               input.input(type='text' name='country' placeholder='Country')
             .form-group
               input.input(type='text' name='zipcode' placeholder='ZIP Code')
-            button.primary-btn.order-submit(href='#') Sign-Up
+            .form-group
+              .input-checkbox
+                input#create-account(type='checkbox')
+                label(for='create-account')
+                  span 
+                  | Admin mode
+                .caption
+                  p
+                    | Admin password
+                  input.input(type='password' name='admin' placeholder='rinneprpr')
+            .row.text-center
+              button.primary-btn.order-submit(href='#') Sign-Up
         // /Billing Details
         // Shiping Details
       .col-md-2

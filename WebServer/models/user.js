@@ -33,6 +33,11 @@ const UserSchema = mongoose.Schema({
   cart:{
     type:JSON,
     required:false
+  },
+  
+  admin:{
+    type:Boolean,
+    required:false
   }
   
 });
