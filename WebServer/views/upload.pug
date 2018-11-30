@@ -5,6 +5,8 @@ block contentinner
  .section
   
   .container
+    if error
+            div(class="alert alert-danger") #{error}
     form(action='/upload/addlaptop' method='POST' enctype='multipart/form-data')
             .form-group
               input.input(type='text' name='name' placeholder='Name')

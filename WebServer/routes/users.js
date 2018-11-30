@@ -42,22 +42,18 @@ router.post('/register', function(req, res){
   req.checkBody('city', 'Address is required').notEmpty();
   req.checkBody('country', 'Address is required').notEmpty();
   req.checkBody('zipcode', 'Address is required').notEmpty();
+  
 
   if(req.body.creditcard != ''){
     creditcard[req.body.creditcard] = req.body.creditcard
   }
   if (admintest){
-    if (admintest == 'rinneprpr'){
-      admin = true
-    }
-    else{
-      res.render('register', {
-        errors:'rinneerror'
-      });
-      return;
-    }
+      if(req.checkBody('admin', 'Passwords do not match').equals('rinneprpr')){
+        admin = true
+      };
   }
   let errors = req.validationErrors();
+  
 
   if(errors){
     console.log(errors)

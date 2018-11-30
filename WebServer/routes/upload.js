@@ -99,14 +99,22 @@ router.post('/addlaptop', upload.any(), function(req, res, next) {
  
 /*req.files has the information regarding the file you are uploading...
 from the total information, i am just using the path and the imageName to store in the mongo collection(table)
-*/
-    var path = req.files[0].path;
-    var imageName = req.files[0].originalname;
+*/  imageName = null
+    if (req.files[0] == null)
+        var imageName = 'nullimg.jpg'
+    else 
+        var imageName = req.files[0].originalname;
  
     var imagepath = {};
     imagepath['path'] = 'uploads/'+imageName;
     imagepath['originalname'] = imageName;
- 
+    let spec = null
+    try {
+        spec = JSON.parse(req.body.spec)
+    }catch(err){
+        res.render('upload',{error:err})
+        return
+    }
 
 
  //imagepath contains two objects, path and the imageName
@@ -119,7 +127,7 @@ from the total information, i am just using the path and the imageName to store 
         brand:req.body.brand,
         price:parseInt(req.body.price),
         img:result._id,
-        spec:JSON.parse(req.body.spec)
+        spec:spec
     });
     
     Laptop.find({name:req.body.name},function(err,laptops){
