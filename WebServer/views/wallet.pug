@@ -1,5 +1,7 @@
 extends memberlayout
 block memberinner
+ if error
+    div(class="alert alert-danger") #{error}
  ul.list-group
  
   
@@ -13,8 +15,8 @@ block memberinner
                     h3.product-name #{card}
                   
                   td
-                   form(method='POST', action='/users/member/deletecard/'+card).pull-right
-                        input.btn.btn-primary.col-3(type='submit',value='Delete')
+                   a.primary-btn.order-submit(href='/users/member/deletecard/'+card).pull-right delete
+                  
 
     
         
@@ -22,9 +24,6 @@ block memberinner
 
     
 
- form(method='POST', action='/users/member/addnewcard')
-    label creditcard:
-    input.form-control(name='creditcard',type='text')
-    br
-    input.btn.btn-primary(type='submit',value='Add New Card')
+ 
+ a.primary-btn.order-submit(href='/users/member/add') addnewcard
     

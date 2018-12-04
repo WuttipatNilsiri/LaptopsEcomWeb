@@ -22,6 +22,11 @@ let laptopSchema = mongoose.Schema({
    required: false
   }
   ,
+  detail:{
+    type: String,
+    required: false
+  }
+  ,
   spec:{
     type: JSON,
     required: true

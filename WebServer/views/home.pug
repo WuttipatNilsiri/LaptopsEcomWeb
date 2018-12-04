@@ -73,23 +73,23 @@ block contentinner
             #tab1.tab-pane.active
               .products-slick(data-nav='#slick-nav-1')
                 
-               for i in [0,1,2,3,4,5,6]
+               for laptop in laptops
                 
                 // product
                 .product
                   .product-img
-                    img(src='/upload/img/'+laptops[i].img alt='')
+                    img(src='/upload/img/'+laptop.img alt='')
                   .product-body
                     p.product-category  Laptop
                     h3.product-name
-                      if laptops[i].name.length > 22
-                        a(href='/laptops/'+laptops[i]._id) #{laptops[i].name.substring(0, 20)+"..."}
+                      if laptop.name.length > 22
+                        a(href='/laptops/'+laptop._id) #{laptop.name.substring(0, 20)+"..."}
                       else
-                        a(href='/laptops/'+laptops[i]._id) #{laptops[i].name}
+                        a(href='/laptops/'+laptop._id) #{laptop.name}
                       
                     h4.product-price
-                      | $#{laptops[i].price}
-                  form(method='POST', action='/laptops/addtocart/'+laptops[i]._id+'/1') 
+                      | $#{laptop.price}
+                  form(method='POST', action='/laptops/addtocart/'+laptop._id+'/1') 
                    .add-to-cart
                     button.add-to-cart-btn(type='submit')
                       i.fa.fa-shopping-cart

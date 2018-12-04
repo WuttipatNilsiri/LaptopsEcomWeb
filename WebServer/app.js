@@ -438,6 +438,8 @@ let users = require('./routes/users');
 let cart = require('./routes/cart');
 let checkout = require('./routes/checkout');
 let upload = require('./routes/upload');
+let editor = require('./routes/editor');
+app.use('/edit', editor);
 app.use('/laptops', laptop);
 app.use('/users', users);
 app.use('/cart', cart);
@@ -447,6 +449,6 @@ app.use('/upload', upload)
 
 
 // Start Server
-app.listen(3000, '158.108.138.239' , function(){
+app.listen(3000 , function(){
   console.log('Server started on port 3000...');
 });

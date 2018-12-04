@@ -54,6 +54,8 @@ var upload = multer({
 });
 
 
+
+
 router.get('/img', function(req, res) {
     //calling the function from index.js class using routes object..
     router.getImages(function(err, genres) {
@@ -86,9 +88,17 @@ router.get('/img/:id', function(req, res) {
 });
  
 router.get('/', function(req, res, next) {
-    // console.log('sadada')
-    res.render('upload');
+    if(req.user){
+        if (req.user.admin){
+            res.render('upload')
+        }
+        else
+            res.redirect('/')
+    }
+    else
+        res.redirect('/')
 });
+
  
 router.post('/addlaptop', upload.any(), function(req, res, next) {
  
@@ -127,7 +137,8 @@ from the total information, i am just using the path and the imageName to store 
         brand:req.body.brand,
         price:parseInt(req.body.price),
         img:result._id,
-        spec:spec
+        spec:spec,
+        detail:req.body.detail
     });
     
     Laptop.find({name:req.body.name},function(err,laptops){

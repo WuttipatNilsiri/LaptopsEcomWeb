@@ -143,7 +143,7 @@ router.get('/member/history', function(req,res){
   })
 })
 
-router.post('/member/deletecard/:id', function(req, res){
+router.get('/member/deletecard/:id', function(req, res){
   let user = req.user
   let query = {_id:user._id}
   
@@ -186,6 +186,10 @@ router.get('/member/wallet',function(req,res){
   
 })
 
+router.get('/member/add',function(req,res){
+  res.render('addcard')
+})
+
 router.post('/member/addnewcard', function(req,res){
   
   let user = req.user
@@ -197,7 +201,14 @@ router.post('/member/addnewcard', function(req,res){
       console.log(err)
     }
     else {
-      card = req.body.creditcard
+      card = null
+      if (req.body.creditcard.trim() != '' && !req.body.creditcard.trim().includes('/') && !req.body.creditcard.trim().includes('\\') )
+        card = req.body.creditcard.trim()
+      else {
+        // console.log('add new Card OK')
+        res.render('addcard',{error:'card NOT valid'})
+        return
+      }
       creditcard = user.creditcard
       if(creditcard == null){
         creditcard = {}

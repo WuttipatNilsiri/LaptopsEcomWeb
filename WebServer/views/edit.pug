@@ -1,0 +1,23 @@
+extends homelayout
+
+block contentinner 
+
+ .section
+  
+  .container
+    
+    form(action='/edit/save/'+laptop._id method='POST')
+            .form-group
+              input.input(type='text' name='name' placeholder='Name' value=laptop.name)
+            .form-group
+              input.input(type='text' name='brand' placeholder='Brand' value=laptop.brand)
+            .form-group
+              input.input(type='number' name='price' placeholder='Price' value=laptop.price)
+            .form-group
+              textarea.input(type='text' name='spec' placeholder='SPEC **JSON** FORMAT' rows="3" ) #{JSON.stringify(laptop.spec)}
+            .form-group
+              textarea.input(type='text' name='detail' placeholder='Detail' rows="3") #{laptop.detail}
+            //- .form-group
+            //-   label IMG
+            //-   input(type='file' name='myimage')
+            button.primary-btn.order-submit(type='submit') SAVE

@@ -1,0 +1,44 @@
+extends memberlayout
+block memberinner
+  
+
+ .section
+  // container
+  .container
+    // row
+    .row.text-center
+      .col-md-5.order-details
+        if error
+            div(class="alert alert-danger") #{error}
+
+        .section-title.text-center
+          h3.title Add New Card
+        .order-summary
+          form(method='POST', action='/users/member/addnewcard')
+            label Creditcard:
+            input.form-control(name='creditcard',type='text')
+            br
+            input.btn.btn-primary(type='submit',value='Add ')
+        
+      // /Order Details
+    // /row
+  // /container
+
+
+//- for item in cart
+//-     a(href="/laptops/"+item.laptop._id)= item.laptop.name
+//-     p= item.quatity
+//-     p= item.laptop.price
+//-     form(method='POST', action='./delete/'+item.laptop._id)
+//-         input.btn.btn-primary(type='submit',value='Delete')
+//- if(cart.length != 0)
+//-     p= totalprice
+//-     form(method='GET', action='/checkout')
+//-         input.btn.btn-primary(type='submit',value='Checkout')
+//- else
+//-     h1= "Cart Empty"
+
+
+    
+    
+ 
